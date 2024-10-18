@@ -16,3 +16,6 @@ app.get("/", (request, response) => {
 module.exports = {
 	app
 }
+
+// Different export syntax: 
+// module.exports = app;
