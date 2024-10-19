@@ -48,4 +48,23 @@ router.get("/:userid", async (request, response) => {
 
 });
 
+
+// POST localhost:3000/users/login
+router.post("/login", async (request, response, next) => {
+	let authHeaderData = request.headers["authorization"];
+
+	console.log(authHeaderData);
+
+	if (authHeaderData != "Example string for header value") {
+		// throw new Error("Not valid login data!");
+		return next(new Error("Not valid login data!"));
+	}
+
+	response.json({
+		authHeaderData
+	});
+});
+
+
+
 module.exports = router;
