@@ -4,6 +4,13 @@ const express = require("express");
 // so that we can configure it 
 const app = express();
 
+// Built-in middleware that allows the server to 
+// receive JSON body data 
+app.use(express.json());
+
+
+
+
 // localhost:3000/
 // domainName:port/
 // serverInstance.verb(path, callback)

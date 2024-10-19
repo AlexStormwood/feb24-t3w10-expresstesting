@@ -31,7 +31,7 @@ describe("Users controller", () => {
 		const response = await request(app).get("/users/" + targetUserId);
 	});
 
-	test.skip("User sign-up route returns a single user as object", async () => {
+	test("User sign-up route returns a single user as object", async () => {
 		// POST localhost:3000/users/signup
 		const response = await request(app)
 			.post("/users/signup")
@@ -39,6 +39,9 @@ describe("Users controller", () => {
 				username: "jason", 
 				password:"SuperCoolPassword1"
 			});
+		
+		expect(response.body.username).toBe("jason");
+		expect(response.body.password).toBe("EncryptedPassword");
 	});
 
 	test.skip("User login route returns a single user as object", async () => {
