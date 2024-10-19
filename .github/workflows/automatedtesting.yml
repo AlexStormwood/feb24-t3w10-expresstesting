@@ -1,0 +1,9 @@
+name: Express Testing
+
+on: [push]
+
+jobs:
+  testing:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Hello world"
